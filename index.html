@@ -36,23 +36,23 @@
         />
         <div class="container">
             <div class="balloon">
-                <div><span>H</span></div>
-                <div><span>A</span></div>
-                <div><span>P</span></div>
-                <div><span>P</span></div>
-                <div><span>Y</span></div>
-                <div><span>B</span></div>
-                <div><span>I</span></div>
-                <div><span>R</span></div>
-                <div><span>T</span></div>
-                <div><span>H</span></div>
-                <div><span>D</span></div>
-                <div><span>A</span></div>
-                <div><span>Y</span></div>
+                <div onclick="showMessage('H', 'Chúc mừng sinh nhật! Chúc cho bức tường Facebook của bạn ngập tràn tin nhắn từ những người mà bạn không bao giờ nói chuyện cùng.')"><span>H</span></div>
+                <div onclick="showMessage('A', 'Hôm nay bạn già hơn hôm qua nhưng trẻ hơn ngày mai, chúc mừng sinh nhật!')"><span>A</span></div>
+                <div onclick="showMessage('P', 'Chúc mừng sinh nhật một trong số ít người có ngày sinh nhật mà tôi có thể nhớ mà không cần Facebook nhắc nhở')"><span>P</span></div>
+                <div onclick="showMessage('P', 'Chúc mừng sinh nhật! Bạn biết đấy, bạn trông không già đến vậy. Nhưng sau đó, bạn trông cũng không còn trẻ như vậy')"><span>P</span></div>
+                <div onclick="showMessage('Y', 'Khi bạn già đi, ba điều xảy ra. Đầu tiên là trí nhớ của bạn biến mất, và tôi không thể nhớ hai người còn lại. Chúc mừng sinh nhật!')"><span>Y</span></div>
+                <div onclick="showMessage('B', 'Mọi người thường nói rằng anh hùng chỉ có một trong hàng ngàn người, nhưng mình thì nói rằng một người bạn như cậu chỉ có một cho cả đời. Chúc cậu sinh nhật vui vẻ!')"><span>B</span></div>
+                <div onclick="showMessage('I', 'Này, tớ chỉ muốn nói rằng bất cứ khi nào cậu có một ý tưởng điên rồ nào đó, thì câu hỏi duy nhất của tớ là: Mấy giờ? Và nhớ phải có một sinh nhật thật tuyệt vời nhé!')"><span>I</span></div>
+                <div onclick="showMessage('R', 'Một người bạn là người hiểu được quá khứ, tin tưởng vào tương lai, và chấp nhận con người thật của bạn, dù bạn có đang ngày càng già đi. Cảm ơn vì đã là một người bạn như vậy, và chúc sinh nhật vui vẻ nhé.')"><span>R</span></div>
+                <div onclick="showMessage('T', 'Cậu hiểu tớ bằng cách mà không một ai khác có thể. Cảm ơn vì đã luôn ở đó và lắng nghe, cậu giống như một người anh em của mình vậy. Chúc sinh nhật vui vẻ!')"><span>T</span></div>
+                <div onclick="showMessage('H', 'Bạn thân: người mà ở bên người đó bạn có thể là chính mình, người mà bạn có thể nói cùng nói chuyện suốt ngày đêm, người mà có thể chấp nhận sự điên rồ của bạn, và người sẽ quên không mua quà cho bạn vào dịp sinh nhật,… đó là lý do tớ đến với tấm thiệp này. Chúc mừng sinh nhật bạn thân nhất của tớ!')"><span>H</span></div>
+                <div onclick="showMessage('D', 'Chúng ta có rất nhiều điều khác biệt, nhưng đó là điều khiến chúng ta trở thành bạn thân. Như những mảnh ghép cần phải khác biệt để khớp với nhau. Chúc mừng sinh nhật đến mảnh ghép mà mình yêu thích nhất!')"><span>D</span></div>
+                <div onclick="showMessage('A', 'Bạn của tớ ngọt ngào hơn những chiếc bánh, rực rỡ hơn những bông hoa, và nóng bỏng hơn cả những ngọn nến.')"><span>A</span></div>
+                <div onclick="showMessage('Y', 'Gửi đến bạn những nụ cười trong từng khoảnh khắc trong ngày đặc biệt của bạn… Chúc bạn có một khoảng thời gian tuyệt vời và một sinh nhật thật hạnh phúc!')"><span>Y</span></div>
             </div>
             <div class="avatar">
-                <img src="./MyAvatar.jpg" alt="" class="avatar__img" onclick="showMessage()" />
-                <h1 onclick="showMessage()" class="avatar__title" style="color: black;">Thanh Trà</h1>
+                <img src="./MyAvatar.jpg" alt="" class="avatar__img" onclick="showMessage('', 'Nhân dịp mừng thọ lần thứ 100 - 82 của mày, chúc mày luôn xinh đẹp nhưng tất nhiên là vẫn thua tao nhé! Happy Birthday!')" />
+                <h1 onclick="showMessage('', 'Nhân dịp mừng thọ lần thứ 100 - 82 của mày, chúc mày luôn xinh đẹp nhưng tất nhiên là vẫn thua tao nhé! Happy Birthday!')" class="avatar__title" style="color: black;">Thanh Trà</h1>
             </div>
             
             <audio id="player" autoplay loop>
@@ -63,10 +63,10 @@
             if (document.location.search.match(/type=embed/gi)) {
                 window.parent.postMessage("resize", "*");
             }
-            function showMessage() {
+            function showMessage(type, msg) {
                 swal({
-                    title: "Lời nhắn",
-                    text: "Nhân dịp mừng thọ lần thứ 100 - 82 của mày, chúc mày luôn xinh đẹp nhưng tất nhiên là vẫn thua tao nhé! Happy Birthday!",
+                    title: "Lời nhắn " + type,
+                    text: msg,
                     button: {
                         text: "❤️️",
                     },
